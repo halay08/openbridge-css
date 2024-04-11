@@ -1,0 +1,69 @@
+{
+  "name": "openbridge-css",
+  "description": "CSS implementation of OpenBridge Design System",
+  "version": "0.2.1",
+  "repository": {
+    "url": "https://gitlab.com/openbridge/openbridge-css"
+  },
+  "scripts": {
+    "start": "npm run storybook",
+    "test": "npm-run-all css lint bundlesize",
+    "prepare": "npm run css",
+    "bundlesize": "bundlesize",
+    "css": "npm-run-all css-lint css-compile css-minify",
+    "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/openbridge.scss dist/css/openbridge.css",
+    "css-compile-no-sourcemap": "node-sass --output-style expanded --source-map false --precision 6 scss/openbridge.scss dist/css/openbridge.css",
+    "lint": "npm-run-all --parallel css-lint",
+    "css-lint": "npm-run-all --parallel css-lint-*",
+    "css-lint-main": "stylelint \"scss/**/*.scss\" --fix",
+    "xcss-lint-vars": "fusv scss",
+    "css-minify": "npm-run-all --parallel css-minify-*",
+    "css-minify-main": "cleancss --level 1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/css/openbridge.min.css dist/css/openbridge.css",
+    "update-deps": "ncu -x bundlesize && npm update",
+    "dist": "npm-run-all --parallel css",
+    "test-all": "npm-run-all lint dist test bundlesize",
+    "watch": "npm-run-all --parallel watch-*",
+    "watch-css": "nodemon --watch scss/ --ext scss --exec \"npm run css-main\"",
+  },
+  "license": "SEE LICENSE IN license.txt",
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@types/node": "^8.10.54",
+    "autoprefixer": "^8.1.0",
+    "babel-loader": "^8.0.6",
+    "bundlesize": "^0.18.0",
+    "check-npm": "^1.0.0",
+    "clean-css-cli": "^4.3.0",
+    "cross-env": "^5.2.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-mocha": "^6.3.0",
+    "find-unused-sass-variables": "0.3.3",
+    "html-loader": "^0.5.5",
+    "node-sass": "^4.13.1",
+    "nodemon": "^1.19.1",
+    "npm-run-all": "^4.1.5",
+    "quixote": "^0.14.0",
+    "sass-loader": "^8.0.2",
+    "shx": "^0.3.2",
+    "string-replace-loader": "^2.2.0",
+    "stylelint": "^10.1.0",
+    "stylelint-config-twbs-bootstrap": "^0.3.1",
+    "stylelint-declaration-use-variable": "^1.7.2",
+    "stylelint-no-px": "^0.12.1",
+    "stylelint-selector-bem-pattern": "^2.1.0",
+    "to-string-loader": "^1.1.6"
+  },
+  "bundlesize": [
+    {
+      "path": "./dist/css/openbridge.css",
+      "maxSize": "20 kB"
+    },
+    {
+      "path": "./dist/css/openbridge.min.css",
+      "maxSize": "8 kB"
+    }
+  ],
+  "engines": {
+    "node": "<=14"
+  }
+}

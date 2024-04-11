@@ -1,0 +1,54 @@
+@import "../reset";
+@import "../variables";
+@import "../mixins/styles";
+@import "../mixins/utilities";
+
+.ob-button {
+  @include font-ui-button();
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: $btn-width-min;
+  height: $btn-height-normal;
+  padding: 0 ($btn-padding-x - $border-width);
+
+  text-align: center;
+  vertical-align: middle;
+
+  border-radius: $btn-border-radius;
+
+  @include pointer-on-hover-not-disabled();
+
+  & .ob-button__icon {
+    @include font-ui-label();
+    margin-left: $btn-icon-padding-x - $btn-padding-x;
+    margin-right: $btn-icon-padding-x;
+  }
+
+  &.ob-button--normal {
+    @include color-normal-active();
+    @include style-normal();
+
+    & .ob-button__icon {
+      @include color-normal-neutral();
+    }
+  }
+
+  &.ob-button--raised {
+    @include color-raised-active();
+    @include style-raised();
+
+    & .ob-button__icon {
+      @include color-raised-neutral();
+    }
+  }
+
+  .ob-icon {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+}
+

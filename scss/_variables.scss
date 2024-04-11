@@ -1,0 +1,262 @@
+$base-rem: 8px !default; /* stylelint-disable-line meowtec/no-px */
+$base-size: 1rem !default; // when converting from px in style guide assume base-size=8px
+$icon-normal-height: 3rem !default; // material design icon height
+$icon-large-height: 5rem !default;
+
+//$font-weight-lighter: lighter !default;
+//$font-weight-light: 300 !default;
+$font-weight-regular: 400 !default;
+$font-weight-semi-bold: 600 !default;
+$font-weight-bold: 800 !default;
+//$font-weight-bolder: bolder !default;
+
+$border-width: .125 * $base-size !default;
+$border-width-focused: .5 * $base-size !default;
+$border-width-active: .25 * $base-size !default;
+
+//$border-radius-normal: .5 * $base-size !default;
+$border-radius-large: .75 * $base-size !default;
+
+$number-tag-diameter: 4 * $base-size !default;
+
+$btn-height-normal: 5 * $base-size !default; //Used for all clickable components except checkbox, radiobutton and toggle switch
+$btn-height-small: 3 * $base-size !default; // Checkbox, Radiobutton & Toggle
+
+$btn-border-radius: $border-radius-large !default;
+$btn-width-min: 12 * $base-size !default;
+$btn-width-toggle: 2 * $btn-height-small !default;
+$btn-diameter-thumb: $btn-height-small - 1.25 * $base-size !default;
+$btn-padding-x: 2 * $base-size !default;
+$btn-icon-padding-x: 1 * $base-size !default;
+$btn-text-under-spacing: .5 * $base-size !default;
+
+$app-btn-diameter-normal: 5 * $base-size !default;
+$app-btn-diameter-large: 9 * $base-size !default;
+$app-btn-large-label-width: 11 * $base-size !default;
+$app-btn-large-label-height: 3 * $base-size !default;
+
+$nav-menu-width: 40 * $base-size !default;
+$nav-menu-item-height: 7 * $base-size !default;
+$nav-menu-item-margin-x: 3 * $base-size !default;
+$nav-menu-label-margin-x: 5 * $base-size !default;
+$nav-menu-item-divider-thickness: .125 * $base-size !default;
+$nav-menu-font-size: 2 * $base-size !default;
+$nav-menu-footer-logo-height: 12 * $base-size !default;
+$nav-menu-top-border-thickness: .25 * $base-size !default;
+$nav-menu-footer-divider-thickness: .25 * $base-size !default;
+
+
+$nav-top-bar-height: 7 * $base-size !default;
+$nav-top-bar-width: 100% !default;
+$nav-top-bar-border-bottom-width: .25 * $base-size !default;
+
+$nav-btn-height: 3 * $base-size !default;
+$nav-top-bar-spacing: ($nav-top-bar-height - $nav-btn-height) / 2 !default;
+
+$nav-divider-height: 4 * $base-size !default;
+$nav-divider-width: .125 * $base-size !default;
+$nav-title-spacing-x: 2 * $base-size !default;
+
+$z-index-hover: 1 !default;
+$z-index-focus: 2 !default;
+
+// raised style
+$raised-enabled-border-width: $border-width !default;
+$raised-hover-border-width: $border-width !default;
+$raised-pressed-border-width: $border-width !default;
+$raised-focused-border-width: $border-width-focused !default;
+$raised-disabled-border-width: $border-width !default;
+$normal-enabled-border-width: $border-width !default;
+$normal-hover-border-width: $border-width !default;
+$normal-pressed-border-width: $border-width !default;
+$normal-disabled-border-width: $border-width !default;
+$normal-focused-border-width: $border-width-focused !default;
+$normal-selected-border-width: $border-width-active !default;
+$indent-enabled-border-width: $border-width !default;
+$indent-hover-border-width: $border-width !default;
+$indent-pressed-border-width: $border-width !default;
+$indent-focused-border-width: $border-width-focused !default;
+$indent-disabled-border-width: $border-width !default;
+$selected-hover-border-width: 0 !default;
+$selected-pressed-border-width: 0 !default;
+$selected-disabled-border-width: 0 !default;
+$selected-enabled-border-width: 0 !default;
+$selected-focused-border-width: $border-width-focused !default;
+$flat-hover-border-width: 0 !default;
+$flat-pressed-border-width: 0 !default;
+$flat-enabled-border-width: 0 !default;
+$flat-focused-border-width: $border-width-focused !default;
+$flat-disabled-border-width: 0 !default;
+$thumb-enabled-border-width: $border-width !default;
+$thumb-hover-border-width: $border-width !default;
+$thumb-pressed-border-width: $border-width !default;
+$thumb-focused-border-width: $border-width-focused !default;
+$thumb-disabled-border-width: $border-width !default;
+$running-enabled-border-width: $border-width !default;
+$running-hover-border-width: $border-width !default;
+$running-pressed-border-width: $border-width !default;
+$running-focused-border-width: $border-width-focused !default;
+$running-disabled-border-width: $border-width !default;
+
+$container-backdrop-color: var(--container-backdrop-color);
+$container-background-color: var(--container-background-color);
+$container-section-color: var(--container-section-color);
+$container-global-color: var(--container-global-color);
+$border-divider-color: var(--border-divider-color);
+$border-outline-color: var(--border-outline-color);
+
+$on-normal-active-color: var(--on-normal-active-color);
+$on-normal-neutral-color: var(--on-normal-neutral-color);
+$on-normal-disabled-color: var(--on-normal-disabled-color);
+$normal-enabled-background-color: var(--normal-enabled-background-color);
+$normal-enabled-border-color: var(--normal-enabled-border-color);
+$normal-hover-background-color: var(--normal-hover-background-color);
+$normal-hover-border-color: var(--normal-hover-border-color);
+$normal-pressed-background-color: var(--normal-pressed-background-color);
+$normal-pressed-border-color: var(--normal-pressed-border-color);
+$normal-focused-background-color: var(--normal-focused-background-color);
+$normal-focused-border-color: var(--normal-focused-border-color);
+$normal-disabled-background-color: var(--normal-disabled-background-color);
+$normal-disabled-border-color: var(--normal-disabled-border-color);
+
+$on-raised-active-color: var(--on-raised-active-color);
+$on-raised-neutral-color: var(--on-raised-neutral-color);
+$on-raised-disabled-color: var(--on-raised-disabled-color);
+$raised-enabled-background-color: var(--raised-enabled-background-color);
+$raised-enabled-border-color: var(--raised-enabled-border-color);
+$raised-hover-background-color: var(--raised-hover-background-color);
+$raised-hover-border-color: var(--raised-hover-border-color);
+$raised-pressed-background-color: var(--raised-pressed-background-color);
+$raised-pressed-border-color: var(--raised-pressed-border-color);
+$raised-focused-background-color: var(--raised-focused-background-color);
+$raised-focused-border-color: var(--raised-focused-border-color);
+$raised-disabled-background-color: var(--raised-disabled-background-color);
+$raised-disabled-border-color: var(--raised-disabled-border-color);
+
+$on-indent-active-color: var(--on-indent-active-color);
+$on-indent-neutral-color: var(--on-indent-neutral-color);
+$on-indent-disabled-color: var(--on-indent-disabled-color);
+$indent-enabled-background-color: var(--indent-enabled-background-color);
+$indent-enabled-border-color: var(--indent-enabled-border-color);
+$indent-hover-background-color: var(--indent-hover-background-color);
+$indent-hover-border-color: var(--indent-hover-border-color);
+$indent-pressed-background-color: var(--indent-pressed-background-color);
+$indent-pressed-border-color: var(--indent-pressed-border-color);
+$indent-focused-background-color: var(--indent-focused-background-color);
+$indent-focused-border-color: var(--indent-focused-border-color);
+$indent-disabled-background-color: var(--indent-disabled-background-color);
+$indent-disabled-border-color: var(--indent-disabled-border-color);
+
+$on-flat-active-color: var(--on-flat-active-color);
+$on-flat-neutral-color: var(--on-flat-neutral-color);
+$on-flat-disabled-color: var(--on-flat-disabled-color);
+$flat-enabled-background-color: var(--flat-enabled-background-color);
+$flat-hover-background-color: var(--flat-hover-background-color);
+$flat-pressed-background-color: var(--flat-pressed-background-color);
+$flat-focused-background-color: var(--flat-focused-background-color);
+$flat-focused-border-color: var(--flat-focused-border-color);
+$flat-disabled-background-color: var(--flat-disabled-background-color);
+
+$on-selected-active-color: var(--on-selected-active-color);
+$on-selected-neutral-color: var(--on-selected-neutral-color);
+$on-selected-disabled-color: var(--on-selected-disabled-color);
+$selected-enabled-background-color: var(--selected-enabled-background-color);
+$selected-hover-background-color: var(--selected-hover-background-color);
+$selected-hover-border-color: var(--selected-hover-border-color);
+$selected-pressed-background-color: var(--selected-pressed-background-color);
+$selected-pressed-border-color: var(--selected-pressed-border-color);
+$selected-focused-background-color: var(--selected-focused-background-color);
+$selected-focused-border-color: var(--selected-focused-border-color);
+$selected-disabled-background-color: var(--selected-disabled-background-color);
+$selected-disabled-border-color: var(--selected-disabled-border-color);
+
+$on-thumb-active-color: var(--on-thumb-active-color);
+$on-thumb-neutral-color: var(--on-thumb-neutral-color);
+$on-thumb-disabled-color: var(--on-thumb-disabled-color);
+$thumb-enabled-background-color: var(--thumb-enabled-background-color);
+$thumb-enabled-border-color: var(--thumb-enabled-border-color);
+$thumb-hover-background-color: var(--thumb-hover-background-color);
+$thumb-hover-border-color: var(--thumb-hover-border-color);
+$thumb-pressed-background-color: var(--thumb-pressed-background-color);
+$thumb-pressed-border-color: var(--thumb-pressed-border-color);
+$thumb-focused-background-color: var(--thumb-focused-background-color);
+$thumb-focused-border-color: var(--thumb-focused-border-color);
+$thumb-disabled-background-color: var(--thumb-disabled-background-color);
+
+$on-running-active-color: var(--on-running-active-color);
+$on-running-neutral-color: var(--on-running-neutral-color);
+$on-running-disabled-color: var(--on-running-disabled-color);
+$running-enabled-background-color: var(--running-enabled-background-color);
+$running-enabled-border-color: var(--running-enabled-border-color);
+$running-hover-background-color: var(--running-hover-background-color);
+$running-hover-border-color: var(--running-hover-border-color);
+$running-pressed-background-color: var(--running-pressed-background-color);
+$running-pressed-border-color: var(--running-pressed-border-color);
+$running-focused-background-color: var(--running-focused-background-color);
+$running-focused-border-color: var(--running-focused-border-color);
+$running-disabled-background-color: var(--running-disabled-background-color);
+$running-disabled-border-color: var(--running-disabled-border-color);
+
+$instrument-dynamic-color: var(--instrument-dynamic-color);
+$instrument-static-color: var(--instrument-static-color);
+$instrument-input-color: var(--instrument-input-color);
+$alert-alarm-color: var(--alert-alarm-color);
+$alert-warning-color: var(--alert-warning-color);
+$alert-caution-color: var(--alert-caution-color);
+$alert-running-color: var(--alert-running-color);
+
+@mixin font-ui-title {
+  font-size: var(--font-ui-title-size);
+  font-family: "Open Sans", sans-serif;
+  font-weight: var(--font-ui-title-weight);
+  line-height: var(--font-ui-title-line-height);
+}
+
+@mixin font-ui-subtitle {
+  font-size: var(--font-ui-subtitle-size);
+  font-family: "Open Sans", sans-serif;
+  font-weight: var(--font-ui-subtitle-weight);
+  line-height: var(--font-ui-subtitle-line-height);
+}
+
+@mixin font-ui-overline {
+  font-size: var(--font-ui-overline-size);
+  font-family: "Open Sans", sans-serif;
+  font-weight: var(--font-ui-overline-weight);
+  line-height: var(--font-ui-overline-line-height);
+}
+
+@mixin font-ui-button {
+  font-size: var(--font-ui-button-size);
+  font-family: "Open Sans", sans-serif;
+  font-weight: var(--font-ui-button-weight);
+  line-height: var(--font-ui-button-line-height);
+}
+
+@mixin font-ui-body-active {
+  font-size: var(--font-ui-body-active-size);
+  font-family: "Open Sans", sans-serif;
+  font-weight: var(--font-ui-body-active-weight);
+  line-height: var(--font-ui-body-active-line-height);
+}
+
+@mixin font-ui-body {
+  font-size: var(--font-ui-body-size);
+  font-family: "Open Sans", sans-serif;
+  font-weight: var(--font-ui-body-weight);
+  line-height: var(--font-ui-body-line-height);
+}
+
+@mixin font-ui-label-active {
+  font-size: var(--font-ui-label-active-size);
+  font-family: "Open Sans", sans-serif;
+  font-weight: var(--font-ui-label-active-weight);
+  line-height: var(--font-ui-label-active-line-height);
+}
+
+@mixin font-ui-label {
+  font-size: var(--font-ui-label-size);
+  font-family: "Open Sans", sans-serif;
+  font-weight: var(--font-ui-label-weight);
+  line-height: var(--font-ui-label-line-height);
+}

@@ -1,0 +1,358 @@
+@mixin focus-ring($border-radius, $focus-ring-color, $focus-ring-width) {
+  z-index: $z-index-focus;
+  border-color: $focus-ring-color !important; //BUGFIX: make sure that any visible border is colored
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: $z-index-focus;
+    width: calc(100% - .00001px); //BUGFIX: a tiny line is visible in chrome if widt: 100%
+    height: calc(100% - .00001px); //BUGFIX: a tiny line is visible in chrome if height: 100%
+    margin: - $focus-ring-width;
+
+    content: "";
+    border: $focus-ring-width $focus-ring-color solid;
+    border-radius: $border-radius + $focus-ring-width;
+  }
+}
+
+@mixin style-normal($focus-ring-radius: $border-radius-large) {
+  background-color: $normal-enabled-background-color;
+  border-color: $normal-enabled-border-color;
+  border-style: solid;
+  border-width: $normal-enabled-border-width;
+
+  &:hover:not(:disabled):not(.ob-disabled) {
+    z-index: $z-index-hover;
+
+    background-color: $normal-hover-background-color;
+    border-color: $normal-hover-border-color;
+    border-width: $normal-hover-border-width;
+  }
+
+  &:focus {
+    background-color: $normal-focused-background-color;
+    @include focus-ring($focus-ring-radius, $normal-focused-border-color, $normal-focused-border-width);
+  }
+
+  &:active:not(:disabled):not(.ob-disabled) {
+    background-color: $normal-pressed-background-color;
+    border-color: $normal-pressed-border-color;
+    border-width: $normal-pressed-border-width;
+  }
+
+  &:disabled,
+  &.ob-disabled {
+    background-color: $normal-disabled-background-color;
+    border-color: $normal-disabled-border-color;
+    border-width: $normal-disabled-border-width;
+  }
+}
+
+@mixin color-normal-active() {
+  color: $on-normal-active-color;
+
+  &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
+    color: $on-normal-disabled-color;
+  }
+}
+
+@mixin color-normal-neutral() {
+  color: $on-normal-neutral-color;
+
+  &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
+    color: $on-normal-disabled-color;
+  }
+}
+
+@mixin style-raised($focus-ring-radius: $border-radius-large) {
+  background-color: $raised-enabled-background-color;
+  border-color: $raised-enabled-border-color;
+  border-style: solid;
+  border-width: $raised-enabled-border-width;
+
+  &:hover:not(:disabled):not(.ob-disabled) {
+    z-index: $z-index-hover;
+
+    background-color: $raised-hover-background-color;
+    border-color: $raised-hover-border-color;
+    border-width: $raised-hover-border-width;
+
+  }
+
+  &:focus {
+    background-color: $raised-focused-background-color;
+    @include focus-ring($focus-ring-radius, $raised-focused-border-color, $raised-focused-border-width);
+  }
+
+  &:active:not(:disabled):not(.ob-disabled) {
+    background-color: $raised-pressed-background-color;
+    border-color: $raised-pressed-border-color;
+    border-width: $raised-pressed-border-width;
+  }
+
+  &:disabled,
+  &.ob-disabled {
+    background-color: $raised-disabled-background-color;
+    border-color: $raised-disabled-border-color;
+    border-width: $raised-disabled-border-width;
+  }
+}
+
+@mixin color-raised-active() {
+  color: $on-raised-active-color;
+
+  &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
+    color: $on-raised-disabled-color;
+  }
+}
+
+@mixin color-raised-neutral() {
+  color: $on-raised-neutral-color;
+
+  &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
+    color: $on-raised-disabled-color;
+  }
+}
+
+@mixin style-selected($focus-ring-radius: $border-radius-large) {
+  background-color: $selected-enabled-background-color;
+  border-style: solid;
+  border-width: $selected-enabled-border-width;
+
+  &:hover:not(:disabled):not(.ob-disabled) {
+    z-index: $z-index-hover;
+
+    background-color: $selected-hover-background-color;
+    border-color: $selected-hover-border-color;
+    border-width: $selected-hover-border-width;
+  }
+
+  &:focus {
+    background-color: $selected-focused-background-color;
+    @include focus-ring($focus-ring-radius, $selected-focused-border-color, $selected-focused-border-width);
+  }
+
+  &:active:not(:disabled):not(.ob-disabled) {
+    background-color: $selected-pressed-background-color;
+    border-color: $selected-pressed-border-color;
+    border-width: $selected-pressed-border-width;
+  }
+
+  &:disabled,
+  &.ob-disabled {
+    background-color: $selected-disabled-background-color;
+    border-color: $selected-disabled-border-color;
+    border-width: $selected-disabled-border-width;
+  }
+}
+
+@mixin color-selected-active() {
+  color: $on-selected-active-color;
+
+  &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
+    color: $on-selected-disabled-color;
+  }
+}
+
+@mixin color-selected-neutral() {
+  color: $on-selected-neutral-color;
+
+  &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
+    color: $on-selected-disabled-color;
+  }
+}
+
+@mixin style-indent($focus-ring-radius: $border-radius-large) {
+  background-color: $indent-enabled-background-color;
+  border-color: $indent-enabled-border-color;
+  border-style: solid;
+  border-width: $indent-enabled-border-width;
+
+  &:hover:not(:disabled):not(.ob-disabled) {
+    z-index: $z-index-hover;
+
+    background-color: $indent-hover-background-color;
+    border-color: $indent-hover-border-color;
+    border-width: $indent-hover-border-width;
+
+  }
+
+  &:focus {
+    background-color: $indent-focused-background-color;
+    @include focus-ring($focus-ring-radius, $indent-focused-border-color, $indent-focused-border-width);
+  }
+
+  &:active:not(:disabled):not(.ob-disabled) {
+    background-color: $indent-pressed-background-color;
+    border-color: $indent-pressed-border-color;
+    border-width: $indent-pressed-border-width;
+  }
+
+  &:disabled,
+  &.ob-disabled {
+    background-color: $indent-disabled-background-color;
+    border-color: $indent-disabled-border-color;
+    border-width: $indent-disabled-border-width;
+  }
+}
+
+@mixin color-indent-active() {
+  color: $on-indent-active-color;
+
+  &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
+    color: $on-indent-disabled-color;
+  }
+}
+
+@mixin color-indent-neutral() {
+  color: $on-indent-neutral-color;
+
+  &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
+    color: $on-indent-disabled-color;
+  }
+}
+
+@mixin style-flat($focus-ring-radius: $border-radius-large) {
+  background-color: $flat-enabled-background-color;
+  border-style: solid;
+  border-width: $flat-enabled-border-width;
+
+  &:hover:not(:disabled):not(.ob-disabled) {
+    z-index: $z-index-hover;
+
+    background-color: $flat-hover-background-color;
+    border-width: $flat-hover-border-width;
+
+  }
+
+  &:focus {
+    background-color: $flat-focused-background-color;
+    @include focus-ring($focus-ring-radius, $flat-focused-border-color, $flat-focused-border-width);
+  }
+
+  &:active:not(:disabled):not(.ob-disabled) {
+      background-color: $flat-pressed-background-color;
+      border-width: $flat-pressed-border-width;
+    }
+
+  &:disabled,
+  &.ob-disabled {
+    background-color: $flat-disabled-background-color;
+    border-width: $flat-disabled-border-width;
+  }
+}
+
+@mixin color-flat-active() {
+  color: $on-flat-active-color;
+
+  &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
+    color: $on-flat-disabled-color;
+  }
+}
+
+@mixin color-flat-neutral() {
+  color: $on-flat-neutral-color;
+
+  &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
+    color: $on-flat-disabled-color;
+  }
+}
+
+@mixin style-thumb($focus-ring-radius: $border-radius-large) {
+  background-color: $thumb-enabled-background-color;
+  border-color: $thumb-enabled-border-color;
+  border-style: solid;
+  border-width: $thumb-enabled-border-width;
+
+  &:hover:not(:disabled):not(.ob-disabled) {
+    z-index: $z-index-hover;
+
+    background-color: $thumb-hover-background-color;
+    border-color: $thumb-hover-border-color;
+    border-width: $thumb-hover-border-width;
+  }
+
+  &:focus {
+    background-color: $thumb-focused-background-color;
+    @include focus-ring($focus-ring-radius, $thumb-focused-border-color, $thumb-focused-border-width);
+  }
+
+  &:active:not(:disabled):not(.ob-disabled) {
+      background-color: $thumb-pressed-background-color;
+      border-color: $thumb-pressed-border-color;
+      border-width: $thumb-pressed-border-width;
+    }
+
+  &:disabled,
+  &.ob-disabled {
+    background-color: $thumb-disabled-background-color;
+    border-width: $thumb-disabled-border-width;
+  }
+}
+
+@mixin color-thumb-active() {
+  color: $on-thumb-active-color;
+
+  &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
+    color: $on-thumb-disabled-color;
+  }
+}
+
+@mixin color-thumb-neutral() {
+  color: $on-thumb-neutral-color;
+
+  &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
+    color: $on-thumb-disabled-color;
+  }
+}
+
+@mixin style-running($focus-ring-radius: $border-radius-large) {
+  background-color: $running-enabled-background-color;
+  border-color: $running-enabled-border-color;
+  border-style: solid;
+  border-width: $running-enabled-border-width;
+
+  &:hover:not(:disabled):not(.ob-disabled) {
+    z-index: $z-index-hover;
+
+    background-color: $running-hover-background-color;
+    border-color: $running-hover-border-color;
+    border-width: $running-hover-border-width;
+
+  }
+
+  &:focus {
+    background-color: $running-focused-background-color;
+    @include focus-ring($focus-ring-radius, $running-focused-border-color, $running-focused-border-width);
+  }
+
+  &:active:not(:disabled):not(.ob-disabled) {
+      background-color: $running-pressed-background-color;
+      border-color: $running-pressed-border-color;
+      border-width: $running-pressed-border-width;
+    }
+
+  &:disabled,
+  &.ob-disabled {
+    background-color: $running-disabled-background-color;
+    border-color: $running-disabled-border-color;
+    border-width: $running-disabled-border-width;
+  }
+}
+
+@mixin color-running-active() {
+  color: $on-running-active-color;
+
+  &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
+    color: $on-running-disabled-color;
+  }
+}
+
+@mixin color-running-neutral() {
+  color: $on-running-neutral-color;
+
+  &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
+    color: $on-running-disabled-color;
+  }
+}
